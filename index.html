@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
-  <title>ChillingCar.com - Interaktivní Příběhová Hra</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChillingCar - Exam Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body style="margin: 0; padding: 0;">
-  <!-- Header Image - Full Width -->
-  <div class="headbar-full-width" style="width: 100vw; margin: 0; padding: 0; position: relative; z-index: 100;">
-    <img src="HeadBar.png" alt="ChillingCar.com" class="headbar-image-full" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; position: relative; z-index: 101;">
-  </div>
-
-  <!-- Background Effects -->
-  <div class="background-gradient"></div>
-  <div class="fog-layer"></div>
-  <div class="stars-container" id="stars"></div>
-  <div class="ember-container" id="embers"></div>
-
-  <!-- Main Content -->
-  <div class="container" style="padding-top: 2rem; text-align: center;">
-    
-    <!-- Header Content -->
-    
-
-    <!-- Play Button -->
-    <div style="margin-top: 4rem;">
-      <a href="story-game/" class="continue-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; border: none; padding: 1.5rem 3rem; font-size: 1.3rem; font-weight: 500; border-radius: 12px; text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
-        <span>🎮</span>
-        <span>Spustit hru</span>
-      </a>
+    <!-- Header Image - Full Width -->
+    <div class="headbar-full-width" style="width: 100vw; margin: 0; padding: 0; position: relative; z-index: 100;">
+        <img src="HeadBar.png" alt="ChillingCar.com" class="headbar-image-full" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; position: relative; z-index: 101;">
     </div>
 
-  </div>
+    <!-- Background Effects -->
+    <div class="background-gradient"></div>
+    <div class="fog-layer"></div>
+    <div class="stars-container" id="stars"></div>
+    <div class="ember-container" id="embers"></div>
 
-  <script>
-    // Create stars
-    const starsContainer = document.getElementById('stars');
-    for (let i = 0; i < 100; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
-      star.style.animationDelay = Math.random() * 3 + 's';
-      starsContainer.appendChild(star);
-    }
+    <!-- Main Content -->
+    <div class="container" style="padding-top: 2rem; position: relative; z-index: 10;">
+        <header>
+            <h1 class="main-title">EXAM COUNTDOWN</h1>
+            <h2 id="current-exam-title">Select an Exam</h2>
+        </header>
 
-    // Create embers
-    const embersContainer = document.getElementById('embers');
-    for (let i = 0; i < 15; i++) {
-      const ember = document.createElement('div');
-      ember.className = 'ember-particle';
-      ember.style.left = Math.random() * 100 + '%';
-      ember.style.setProperty('--duration', (8 + Math.random() * 6) + 's');
-      ember.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
-      ember.style.animationDelay = Math.random() * 5 + 's';
-      embersContainer.appendChild(ember);
-    }
+        <main style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-top: 2rem; width: 100%;">
+            <div class="countdown-container" id="countdown-display">
+                <div class="time-block">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
 
-    // Play button functionality
-    const playButton = document.getElementById('playButton');
-    const devNotice = document.getElementById('devNotice');
+            <div class="exams-list">
+                <h3>Upcoming Exams</h3>
+                <ul id="exam-list">
+                    <!-- dynamically populated by JS -->
+                </ul>
+            </div>
+            
+            <div class="mascot-container">
+                <img src="images/cat1.png" alt="Chilling cat" class="mascot" id="mascot-img">
+            </div>
+        </main>
+    </div>
 
-    playButton.addEventListener('click', function() {
-      // Add click effect
-      this.classList.add('clicked');
-      
-      // Show development notice with animation
-      setTimeout(() => {
-        devNotice.style.display = 'block';
-        setTimeout(() => {
-          devNotice.style.opacity = '0';
-          devNotice.style.transform = 'translateY(20px)';
-          devNotice.style.transition = 'all 0.6s ease';
-          setTimeout(() => {
-            devNotice.style.opacity = '1';
-            devNotice.style.transform = 'translateY(0)';
-          }, 10);
-        }, 10);
-      }, 300);
+    <script src="script.js"></script>
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+        }
 
-      // Remove clicked class
-      setTimeout(() => {
-        this.classList.remove('clicked');
-      }, 600);
-    });
-  </script>
+        // Create embers
+        const embersContainer = document.getElementById('embers');
+        for (let i = 0; i < 15; i++) {
+        const ember = document.createElement('div');
+        ember.className = 'ember-particle';
+        ember.style.left = Math.random() * 100 + '%';
+        ember.style.setProperty('--duration', (8 + Math.random() * 6) + 's');
+        ember.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
+        ember.style.animationDelay = Math.random() * 5 + 's';
+        embersContainer.appendChild(ember);
+        }
+    </script>
 </body>
 </html>
