@@ -1,7 +1,7 @@
 const exams = [
-    { name: "Sloh", date: "2026-04-15T08:00:00" },
-    { name: "Didaktické testy", date: "2026-05-04T08:00:00" },
-    { name: "Ustní zkoušky", date: "2026-05-18T08:00:00" }
+    { name: "Sloh", date: "2026-04-15T07:30:00" },
+    { name: "Didaktické testy", date: "2026-05-04T07:30:00" },
+    { name: "Ustní zkoušky", date: "2026-05-22T07:30:00" }
 ];
 
 let targetDate = new Date(exams[0].date).getTime();
