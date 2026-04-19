@@ -259,6 +259,40 @@ li.active {
   text-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
 }
 
+.fleshcards-link-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fleshcards-btn {
+  background: var(--accent-orange);
+  color: #000;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--accent-orange-glow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fleshcards-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px var(--accent-orange);
+}
+
+.fleshcards-btn::after {
+  content: ' →';
+  font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
   .main-title { font-size: 2.8rem; }
   .number { font-size: 3.5rem; }
