@@ -525,3 +525,143 @@ header {
         height: 60px;
     }
 }
+
+/* FILTER PANEL */
+.filter-panel {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.filter-panel.active {
+    display: flex;
+}
+
+.filter-content {
+    background: #11111e;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filter-header h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.filter-section {
+    margin-bottom: 2.5rem;
+}
+
+.filter-section h4 {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary);
+    padding-left: 1rem;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.checkbox-wrapper:hover .checkbox-tile {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.checkbox-wrapper input:checked + .checkbox-tile {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--orange-glow);
+}
+
+.tile-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tile-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Mix author/work card text styles */
+.mixed-authors {
+    color: var(--text-muted);
+    font-size: 1.2rem !important;
+    margin-top: 0.5rem;
+    font-weight: 400 !important;
+}
+
+@media (max-width: 600px) {
+    .filter-content {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    .checkbox-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

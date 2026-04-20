@@ -29,8 +29,48 @@
             <!-- STUDY MODE -->
             <section id="view-study" class="view active">
                 <div class="controls">
-                    <button id="shuffle-btn" class="action-btn">🔀 Zamíchat karty</button>
-                    <div class="deck-stats">Celkem karet: <span id="total-cards-badge">0</span></div>
+                    <button id="open-filters-btn" class="action-btn">🎯 Filtry</button>
+                    <button id="shuffle-btn" class="action-btn">🔀 Zamíchat</button>
+                    <div class="deck-stats">Karet: <span id="total-cards-badge">0</span></div>
+                </div>
+
+                <!-- NEW: Filter Panel -->
+                <div id="filter-panel" class="filter-panel">
+                    <div class="filter-content">
+                        <div class="filter-header">
+                            <h3 class="gradient-text">Konfigurace studování</h3>
+                            <button id="close-filters-btn" class="close-btn">&times;</button>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Období a roky</h4>
+                            <div id="era-checkboxes" class="checkbox-grid">
+                                <!-- Dynamic eras -->
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h4>Speciální typy</h4>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" id="type-authors-works" checked>
+                                    <span class="checkbox-tile">
+                                        <span class="tile-icon">✍️</span>
+                                        <span class="tile-label">Autoři a hlavní díla</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" id="type-everything" checked>
+                                    <span class="checkbox-tile">
+                                        <span class="tile-icon">📚</span>
+                                        <span class="tile-label">Všechny ostatní info</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="apply-filters-btn" class="btn primary full-width">Spustit studování</button>
+                    </div>
                 </div>
                 
                 <div class="flashcard-container">

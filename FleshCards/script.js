@@ -71,71 +71,96 @@ function isHeader(line) {
 }
 
 // --- Generování zmenšených kartiček (Atomic Flashcards) ---
-function generateAtomicCards(authors) {
+function generateAtomicCards(authors, filters = { eras: [], types: ['authors-works', 'everything'] }) {
     let generatedCards = [];
 
     authors.forEach(auth => {
-        // 1. Znalost díla -> Autor
-        generatedCards.push({
-            type: 'Dílo ➔ Autor',
-            prompt: `Kdo napsal dílo:\n"${auth.title}"?`,
-            answer: auth.author
-        });
+        // Extract era name (e.g. from "1564–1616 · Renesance" get "Renesance")
+        const eraName = auth.era.split(' · ')[1] || auth.era;
+        
+        // Filter by era
+        if (filters.eras.length > 0 && !filters.eras.includes(eraName)) {
+            return;
+        }
 
-        // 1b. Znalost autora -> Dílo
-        generatedCards.push({
-            type: 'Autor ➔ Dílo',
-            prompt: `Jaké je stěžejní dílo autora:\n${auth.author}?`,
-            answer: auth.title
-        });
-
-        // 2. Kontextové období
-        if (auth.origin && auth.era) {
+        // 0. Mixed Author <-> Work (requested by user)
+        if (filters.types.includes('authors-works')) {
+            const sideA = auth.author;
+            const sideB = auth.title + (auth.otherWorks.length > 0 ? `\n\nDalší: ${auth.otherWorks.slice(0, 2).map(w => w.split(' — ')[0]).join(', ')}` : '');
+            
+            const isSwapped = Math.random() > 0.5;
             generatedCards.push({
-                type: 'Umělecký směr',
-                prompt: `Do jakého směru a doby patří:\n${auth.author}?`,
-                answer: `${auth.origin}\n${auth.era}`
+                type: 'Autor ↔ Dílo',
+                prompt: isSwapped ? sideB : sideA,
+                answer: isSwapped ? sideA : sideB,
+                isMixed: true
             });
         }
 
-        // 3. Tvorba -> Díla
-        if (auth.otherWorks.length > 0) {
+        if (filters.types.includes('everything')) {
+            // 1. Znalost díla -> Autor
             generatedCards.push({
-                type: 'Další tvorba',
-                prompt: `Vyjmenuj alespoň 2 další díla autora:\n${auth.author}`,
-                answer: auth.otherWorks.join('\n')
-            });
-        }
-
-        // 4. Současníci
-        if (auth.contemporaries.length > 0) {
-           generatedCards.push({
-               type: 'Dobový kontext',
-               prompt: `Jmenuj současníky nebo vzory k autorovi:\n${auth.author}`,
-               answer: auth.contemporaries.join('\n')
-           });
-        }
-
-        // 5. Zajímavosti (poznej autora)
-        if (auth.info.length > 0) {
-            generatedCards.push({
-                type: 'Zajímavost',
-                prompt: `K jakému autorovi se váže tato zajímavost?\n\n"${auth.info}"`,
+                type: 'Dílo ➔ Autor',
+                prompt: `Kdo napsal dílo:\n"${auth.title}"?`,
                 answer: auth.author
             });
-        }
 
-        // 6. Ekvivalenty
-        if (auth.equivalent && auth.equivalent !== "—" && !auth.equivalent.startsWith("—")) {
-           generatedCards.push({
-               type: 'Srovnání / Ekvivalent',
-               prompt: `Jaký je český / světový ekvivalent k autorovi či dílu:\n${auth.author}?`,
-               answer: auth.equivalent
-           });
+            // 1b. Znalost autora -> Dílo
+            generatedCards.push({
+                type: 'Autor ➔ Dílo',
+                prompt: `Jaké je stěžejní dílo autora:\n${auth.author}?`,
+                answer: auth.title
+            });
+
+            // 2. Kontextové období
+            if (auth.origin && auth.era) {
+                generatedCards.push({
+                    type: 'Umělecký směr',
+                    prompt: `Do jakého směru a doby patří:\n${auth.author}?`,
+                    answer: `${auth.origin}\n${auth.era}`
+                });
+            }
+
+            // 3. Tvorba -> Díla
+            if (auth.otherWorks.length > 0) {
+                generatedCards.push({
+                    type: 'Další tvorba',
+                    prompt: `Vyjmenuj alespoň 2 další díla autora:\n${auth.author}`,
+                    answer: auth.otherWorks.join('\n')
+                });
+            }
+
+            // 4. Současníci
+            if (auth.contemporaries.length > 0) {
+               generatedCards.push({
+                   type: 'Dobový kontext',
+                   prompt: `Jmenuj současníky nebo vzory k autorovi:\n${auth.author}`,
+                   answer: auth.contemporaries.join('\n')
+               });
+            }
+
+            // 5. Zajímavosti (poznej autora)
+            if (auth.info.length > 0) {
+                generatedCards.push({
+                    type: 'Zajímavost',
+                    prompt: `K jakému autorovi se váže tato zajímavost?\n\n"${auth.info}"`,
+                    answer: auth.author
+                });
+            }
+
+            // 6. Ekvivalenty
+            if (auth.equivalent && auth.equivalent !== "—" && !auth.equivalent.startsWith("—")) {
+               generatedCards.push({
+                   type: 'Srovnání / Ekvivalent',
+                   prompt: `Jaký je český / světový ekvivalent k autorovi či dílu:\n${auth.author}?`,
+                   answer: auth.equivalent
+               });
+            }
         }
     });
 
-    return generatedCards;
+    // Shuffle result
+    return generatedCards.sort(() => Math.random() - 0.5);
 }
 
 
@@ -175,6 +200,24 @@ const totalCardsBadge = document.getElementById('total-cards-badge');
 // Init
 function init() {
     rawAuthors = parseAuthorProfiles(rawData);
+    
+    // Fill eras in filter
+    const eras = [...new Set(rawAuthors.map(a => a.era.split(' · ')[1] || a.era))].sort();
+    const eraContainer = document.getElementById('era-checkboxes');
+    eraContainer.innerHTML = '';
+    eras.forEach(era => {
+        const label = document.createElement('label');
+        label.className = 'checkbox-wrapper';
+        label.innerHTML = `
+            <input type="checkbox" name="era-filter" value="${era}" checked>
+            <span class="checkbox-tile">
+                <span class="tile-icon">⌛</span>
+                <span class="tile-label">${era}</span>
+            </span>
+        `;
+        eraContainer.appendChild(label);
+    });
+
     atomicDeck = generateAtomicCards(rawAuthors);
     
     totalCardsBadge.innerText = atomicDeck.length;
@@ -230,6 +273,49 @@ function setupEventListeners() {
     tabMatch.addEventListener('click', () => switchTab('match'));
     document.getElementById('match-check-btn').addEventListener('click', handleMatchCheck);
     document.getElementById('match-next-btn').addEventListener('click', generateMatchQuestion);
+
+    // Filter Controls
+    const filterPanel = document.getElementById('filter-panel');
+    document.getElementById('open-filters-btn').addEventListener('click', () => {
+        filterPanel.classList.add('active');
+    });
+    document.getElementById('close-filters-btn').addEventListener('click', () => {
+        filterPanel.classList.remove('active');
+    });
+    document.getElementById('apply-filters-btn').addEventListener('click', applyFilters);
+}
+
+function applyFilters() {
+    const selectedEras = Array.from(document.querySelectorAll('input[name="era-filter"]:checked')).map(cb => cb.value);
+    const types = [];
+    if (document.getElementById('type-authors-works').checked) types.push('authors-works');
+    if (document.getElementById('type-everything').checked) types.push('everything');
+
+    if (selectedEras.length === 0) {
+        alert('Vyber alespoň jedno období!');
+        return;
+    }
+    if (types.length === 0) {
+        alert('Vyber alespoň jeden typ karet!');
+        return;
+    }
+
+    const filters = {
+        eras: selectedEras,
+        types: types
+    };
+
+    atomicDeck = generateAtomicCards(rawAuthors, filters);
+    totalCardsBadge.innerText = atomicDeck.length;
+    currentCardIndex = 0;
+    
+    document.getElementById('filter-panel').classList.remove('active');
+    
+    if (atomicDeck.length > 0) {
+        renderStudyCard();
+    } else {
+        alert('Pro tento výběr nebyly nalezeny žádné karty.');
+    }
 }
 
 function switchTab(tab) {
@@ -263,14 +349,43 @@ function renderStudyCard() {
     const card = atomicDeck[currentCardIndex];
     if (!card) return;
 
+    const frontEl = document.getElementById('card-front-prompt');
+    const backEl = document.getElementById('card-back-answer');
+
     progressText.innerText = `${currentCardIndex + 1} / ${atomicDeck.length}`;
 
     // Nastavení textů front/back
     document.getElementById('card-type-badge-front').innerText = card.type;
     document.getElementById('card-type-badge-back').innerText = card.type;
     
-    document.getElementById('card-front-prompt').innerText = card.prompt;
-    document.getElementById('card-back-answer').innerText = card.answer;
+    // Convert newlines to breaks for HTML
+    const formatText = (text) => text.replace(/\n/g, '<br>');
+    
+    frontEl.innerHTML = formatText(card.prompt);
+    backEl.innerHTML = formatText(card.answer);
+
+    // Speciální stylování pro "Další díla" v míchaných kartách
+    if (card.isMixed) {
+        frontEl.innerHTML = frontEl.innerHTML.replace('Další:', '<span class="mixed-authors">Další:</span>');
+        backEl.innerHTML = backEl.innerHTML.replace('Další:', '<span class="mixed-authors">Další:</span>');
+    }
+
+    // Dynamické zmenšení textu pokud je moc dlouhý
+    if (card.prompt.length > 80) {
+        frontEl.style.fontSize = '1.6rem';
+    } else if (card.prompt.length > 40) {
+        frontEl.style.fontSize = '2rem';
+    } else {
+        frontEl.style.fontSize = '';
+    }
+
+    if (card.answer.length > 80) {
+        backEl.style.fontSize = '1.4rem';
+    } else if (card.answer.length > 40) {
+        backEl.style.fontSize = '1.8rem';
+    } else {
+        backEl.style.fontSize = '';
+    }
 }
 
 // --- Quiz Logic (založeno na základních profilech) ---
