@@ -71,17 +71,39 @@ function isHeader(line) {
 }
 
 // --- Generování zmenšených kartiček (Atomic Flashcards) ---
-function generateAtomicCards(authors, filters = { eras: [], types: ['authors-works', 'everything'] }) {
+function generateAtomicCards(authors, filters = { types: ['authors-works', 'eras-years', 'everything'] }) {
     let generatedCards = [];
+    const seenEras = new Set(); // To prevent duplicate era-year cards
 
     authors.forEach(auth => {
-        // Extract era name (e.g. from "1564–1616 · Renesance" get "Renesance")
-        const eraName = auth.era.split(' · ')[1] || auth.era;
-        
-        // Filter by era
-        if (filters.eras.length > 0 && !filters.eras.includes(eraName)) {
-            return;
+        // --- Období a roky ---
+        if (filters.types.includes('eras-years')) {
+            const eraParts = auth.era.split(' · ');
+            if (eraParts.length === 2) {
+                const years = eraParts[0].trim();
+                const eraName = eraParts[1].trim();
+                const key = `${years}|${eraName}`;
+                
+                if (!seenEras.has(key)) {
+                    seenEras.add(key);
+                    
+                    // Směr -> Roky
+                    generatedCards.push({
+                        type: 'Období ➔ Roky',
+                        prompt: `Kdy probíhalo toto období / směr?\n\n"${eraName}"`,
+                        answer: years
+                    });
+                    
+                    // Roky -> Směr
+                    generatedCards.push({
+                        type: 'Roky ➔ Období',
+                        prompt: `Který směr / období probíhalo v letech:\n\n${years}?`,
+                        answer: eraName
+                    });
+                }
+            }
         }
+
 
         // 0. Mixed Author <-> Work (requested by user)
         if (filters.types.includes('authors-works')) {
@@ -201,22 +223,7 @@ const totalCardsBadge = document.getElementById('total-cards-badge');
 function init() {
     rawAuthors = parseAuthorProfiles(rawData);
     
-    // Fill eras in filter
-    const eras = [...new Set(rawAuthors.map(a => a.era.split(' · ')[1] || a.era))].sort();
-    const eraContainer = document.getElementById('era-checkboxes');
-    eraContainer.innerHTML = '';
-    eras.forEach(era => {
-        const label = document.createElement('label');
-        label.className = 'checkbox-wrapper';
-        label.innerHTML = `
-            <input type="checkbox" name="era-filter" value="${era}" checked>
-            <span class="checkbox-tile">
-                <span class="tile-icon">⌛</span>
-                <span class="tile-label">${era}</span>
-            </span>
-        `;
-        eraContainer.appendChild(label);
-    });
+
 
     atomicDeck = generateAtomicCards(rawAuthors);
     
@@ -254,6 +261,21 @@ function setupEventListeners() {
         }
     });
 
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+        // Only if study view is active
+        if (!viewStudy.classList.contains('active')) return;
+
+        if (e.key === 'ArrowLeft') {
+            if (currentCardIndex > 0) changeCard(currentCardIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+            if (currentCardIndex < atomicDeck.length - 1) changeCard(currentCardIndex + 1);
+        } else if (e.key === ' ' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault(); // Prevent scrolling with space/arrows
+            flashcard.click();
+        }
+    });
+
     shuffleBtn.addEventListener('click', () => {
         // Fisher-Yates zamíchání
         for (let i = atomicDeck.length - 1; i > 0; i--) {
@@ -286,22 +308,17 @@ function setupEventListeners() {
 }
 
 function applyFilters() {
-    const selectedEras = Array.from(document.querySelectorAll('input[name="era-filter"]:checked')).map(cb => cb.value);
     const types = [];
     if (document.getElementById('type-authors-works').checked) types.push('authors-works');
+    if (document.getElementById('type-eras-years').checked) types.push('eras-years');
     if (document.getElementById('type-everything').checked) types.push('everything');
 
-    if (selectedEras.length === 0) {
-        alert('Vyber alespoň jedno období!');
-        return;
-    }
     if (types.length === 0) {
         alert('Vyber alespoň jeden typ karet!');
         return;
     }
 
     const filters = {
-        eras: selectedEras,
         types: types
     };
 
