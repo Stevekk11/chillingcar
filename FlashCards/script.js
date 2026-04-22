@@ -412,10 +412,7 @@ function getLucideIconSvg(iconName) {
     }
 
     return window.lucide.icons[iconName].toSvg({
-        width: 18,
-        height: 18,
-        class: 'feedback-icon',
-        'stroke-width': 2.2
+        class: 'feedback-icon'
     });
 }
 

@@ -13,6 +13,7 @@
     --font-accent: 'Orbitron', sans-serif;
     --radius: 20px;
     --orange-glow: rgba(255, 107, 53, 0.4);
+    --icon-stroke-width: 2.2;
 }
 
 body {
@@ -194,7 +195,7 @@ header {
 .action-btn svg {
     width: 1rem;
     height: 1rem;
-    stroke-width: 2.2;
+    stroke-width: var(--icon-stroke-width);
 }
 
 .deck-stats {
@@ -653,7 +654,7 @@ header {
 .tile-icon svg {
     width: 1.5rem;
     height: 1.5rem;
-    stroke-width: 2.2;
+    stroke-width: var(--icon-stroke-width);
 }
 
 .tile-label {
@@ -676,7 +677,7 @@ header {
 .feedback-content svg {
     width: 1.1rem;
     height: 1.1rem;
-    stroke-width: 2.2;
+    stroke-width: var(--icon-stroke-width);
 }
 
 /* Mix author/work card text styles */
