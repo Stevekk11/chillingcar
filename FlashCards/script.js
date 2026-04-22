@@ -219,10 +219,16 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const progressText = document.getElementById('study-progress-text');
 const totalCardsBadge = document.getElementById('total-cards-badge');
 
+function initLucideIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
+}
+
 // Init
 function init() {
     rawAuthors = parseAuthorProfiles(rawData);
-    
+    initLucideIcons();
 
 
     atomicDeck = generateAtomicCards(rawAuthors);
@@ -407,7 +413,13 @@ function renderStudyCard() {
 
 // --- Quiz Logic (založeno na základních profilech) ---
 function getLucideIconSvg(iconName) {
-    if (!window.lucide || !window.lucide.icons || !window.lucide.icons[iconName]) {
+    if (!window.lucide || !window.lucide.icons) {
+        console.warn('Lucide runtime is unavailable for feedback icon rendering.');
+        return '';
+    }
+
+    if (!window.lucide.icons[iconName]) {
+        console.warn(`Lucide icon "${iconName}" is unavailable for feedback rendering.`);
         return '';
     }
 
