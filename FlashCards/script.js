@@ -411,9 +411,7 @@ function getLucideIconSvg(iconName) {
         return '';
     }
 
-    return window.lucide.icons[iconName].toSvg({
-        class: 'feedback-icon'
-    });
+    return window.lucide.icons[iconName].toSvg();
 }
 
 function setFeedbackMessage(element, message, iconName, statusClass) {
