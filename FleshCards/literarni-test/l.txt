@@ -1,0 +1,1252 @@
+Q1
+1. Consider your school library, Detail of one student borrowing one book data or information
+- Data
+2.Consider your school library. Is the total number of books out on loan in one given month
+- Information
+3.Users could directly interact with which of the following software to access essential
+business applications
+- operating system software
+- Gui software
+- internet browser software
+4.Software cannot operate without hardware
+- True
+5.A specialized type of software, which controls and manages the hardware in a computer
+system
+- Operating system
+6.The overall mission of the oracle corporation is to use the internet and fast processing
+servers to build its own network
+- False
+7.The market for IT professionals is still increasing and will continue to do so in the future as
+the world gets ever more dependent on computer systems
+- True
+8.How do you turn data into information?
+- By querying it or accessing it
+9.Once you have learned how to write programs and build systems, you no longer need any
+input or involvement from any users as you are perfectly capable of delivering the systems
+and business need and want
+- False
+10.Entities are transformed into tables during the Database design process
+- True
+11.Data modeling is the last step in the database development process
+- False
+12.Sql became the most commonly used query language in the 1980s
+- True
+13.The demand for information Technology professionals in todays market is increasing
+- True
+14.Which of the following are examples of data becoming information
+- E. A, B, and D
+15.Which term describes the physical components of a computer system?
+- Hardware
+16.The work of E.F.Codd in the early 1970s led to the development of relational databases
+- True
+17.What is the difference between information and data
+- Data turns into useful information. It is stored in a database and accessed by
+systems and users
+18.Oracle was one of the first relational database systems available commercially
+- True
+19.In the grid computing model, resources are pooled together for efficiency.
+- True
+20.Personal computers (PCs) have been in existence since 1950
+- False
+21.Databases are used in most countries and by most governments. Life, as we know it,
+would change drastically if we no longer had access to databases
+- True
+22.Businesses involved in any of the following typically use databases to handle their data:
+Finance, Logistics, Commerce, Procurement, and Distribution
+- True
+23.Which of the following are examples of e-business that use database software
+- Online personal shopping service
+- Online book store
+- Online clothing store
+24.Every time you shop online, it is likely you will be accessing a database
+- True
+25.Most of the well known Internet search engines use databases to store data
+- True
+26.Changes in computing have affected many of our day-to-day activities. Are all of the
+following examples of this charge? Yes or No?
+- Yes
+27.Which of the following represents the correct sequence of steps in the, Database
+Development Process
+- Analyze,Design,Build
+28.Information which was gained from data is the same as
+- Knowledge
+- Intelligence
+Q2
+1. Which of the following entities most likely contains valid attributes?
+- Entity: Mother. Attributes: Name, Birthdate, Occupation, Start Date
+- ☑️ Entity: Home. Attributes: Number of Bedrooms, Owner, Address, Date Built
+- ☑️Entity: Pet. Attributes: Name, Birthdate, Owner
+- Entity: Car. Attributes: Owner Occupation, Owner Salary, Speed
+2. A well structured ERD will show only some parts of the finished data model. You should
+never try to model the entire system in one diagram, no matter how small the diagram might
+be. True or False?
+● True
+● ☑️ False
+3. Data modeling is performed for the following reasons: (Choose Two)
+● We do not need data models; we can just start coding right away.
+● We draw an ERD solely to please the users; once completed, the ERD is never
+referred to again as it serves no purpose in the real world.
+● ☑️ It helps discussions and reviews.
+● ☑️ The ERD becomes a blueprint for designing the actual system.
+4. An ERD is an example of a Physical Model. True or False?
+● ☑️ False
+● True
+5. Which of the following are examples of ENTITY: Instance? (Choose Two)
+● ☑️ ANIMAL: Dog
+● MEAT PRODUCT: Lettuce
+● ☑️ TRANSPORTATION METHOD: Car
+● BODY PART: Larry Ellison
+6. Data models are drawn to show users the actual Data that their new system will contain;
+only Data listed on the Diagram can be entered into the Database. True or False?
+● ☑️ False
+● True
+7. A/an ________ is a piece of information that in some way describes an entity. It is a
+property of the entity and it quantifies, qualifies, classifies, or specifies the entity.
+● Table
+● ERD
+● Process
+● ☑️ Attribute
+8. An Entity Relationship model is independent of the hardware or software used for
+implementation. True or False?
+● ☑️ True
+● False
+9. Entities are usually verbs. True or False?
+● True
+● ☑️ False
+10. A Conceptual Model is not concerned with how the Physical Model will be implemented.
+True or False?
+● ☑️ True
+● False
+11. A/an ________ is defined as "Something" of significance to the business about which
+data must be known.
+● Instance
+● Relationship
+● ☑️ Entity
+● None of the above
+12. Which of the following statements about Entities are true? (Choose Three)
+● ☑️ A name for a set of similar "things"
+● ☑️ “Something” of significance to the business about which data must be known.
+● They never have Instances
+● ☑️ They are usually a noun.
+13. Which of the following attributes is suitable to be a Unique Identifier?
+● First name
+● Last name
+● Address
+● ☑️ Social Security Number
+14. Which of the following is an example of a volatile attribute?
+● Name
+● ☑️ Age
+● Date of Birth
+● Hire Date
+15. Entity Relationship modeling is dependent on the hardware or software used for
+implementation, so you will need to change your ERD if you decide to change Hardware
+Vendor. True or False?
+● True
+● ☑️ False
+16.The purpose of an ERD is to document the proposed system and facilitate discussion and
+understanding of the requirements captured by the developer. True or False?
+● ☑️ True
+● False
+17.The Physical Model is derived from the Conceptual Model. True or False?
+● ☑️ True
+● False
+18. What is the purpose of a Unique Identifier?
+● ☑️ To identify one unique instance of an entity by using one or more attributes and/or
+relationships.
+● To identify a specific row within a table, using one or more columns and/or foreign
+keys.
+● To uniquely determine a table and columns within that table.
+● Create an entity that is unlike any other entity aside from itself.
+19. Which of the following can be found in an ERD? (Choose Two)
+● ☑️ Entities
+● Tables
+● ☑️ Attributes
+● Instances
+20. A/an ________'s value can be a number, a character string, a date, an image, a sound.
+● Table
+● ☑️ Attribute
+● Entity
+● ERD
+21. Attributes can only have one value at any point for each instance in the entity. True or
+False?
+● ☑️ True
+● False
+22. In the following statements, find two good examples of ENTITY: Instance. (Choose Two)
+● ☑️ DAIRY PRODUCT: milk
+● TRAIN: runs
+● ☑️ BOOK: Biography of Mahatma Gandhi
+● VEGETABLE: grows
+23. Unique Identifiers...
+● Distinguish one entity from another
+● Distinguish nothing
+● ☑️ Distinguish one instance of an entity from all other instances of that entity
+● Distinguish all entities in a database
+24. Many reasons exist for creating a conceptual model. Choose three appropriate reasons
+from the options below. (Choose Three)
+● ☑️ They accurately describe what a physical model will contain.
+● They model the information flow of data.
+● They capture the implementation details of the physical model.
+● ☑️ They model functional and informational needs.
+● ☑️ They capture current and future needs.
+25. Which of the following statements about ERD's is false?
+● ☑️ Model all information that is derivable from other information already modeled.
+● Capture all required information.
+● Locate information in a predictable, logical place.
+● Ensure that information appears only once.
+26. Attributes can be either mandatory or optional. True or False?
+● ☑️ True
+● False
+27. All of the following could be attributes of an ENTITY called PERSON, except which one?
+● Haircolor
+● Weight
+● ☑️ Natacha Hansen
+● Gender
+28. All of the following would be instances of the entity PERSON except which?
+● Grace Abinajam
+● ☑️ Male
+● David Jones
+● Angelina Rosalie
+29.An ERD is an example of a Logical Model. True or False?
+● False
+● ☑️ True
+30. Which of the following statements about attributes are true? (Choose Three)
+● ☑️ They describe, qualify, quantify, classify, or specify an entity.
+● ☑️ They must be single valued.
+● ☑️ They have a data type, such as number or character string.
+● They are often adjectives.
+31. Which of the following statements are true about ERD's? (Choose Two)
+● ☑️ You should not model derivable data.
+● A piece of information can be shown multiple times on an ERD.
+● All data must be represented on the ERD, including derived summaries and the
+result of calculations.
+● ☑️ A piece of information should only be found in one place on an ERD.
+32. The word "Volatile" means...
+● ☑️Changing constantly; unstable
+● Limited quantity
+● Static; unlikely to change
+● Large quantity
+33. Documenting Business Requirements helps developers control the scope of the system
+and prevents users from claiming that the new system does not meet their business
+requirements. True or False?
+● ☑️True
+● False
+Q3
+1. When reading the relationships in an ERD, you are said to be speaking:
+● Entity-ish
+● Gibberish
+● ☑️ ERDish
+● Relationship-ish
+2. Relationships always exist between
+● 3 or more attributes
+● ☑️ 2 entities (or one entity and itself)
+● 3 or more entities
+● 2 attributes
+3. Entity names are always singular. True or False?
+● ☑️ True
+● False
+4. Relationships can be either mandatory or optional. True or False?
+● ☑️ True
+● False
+5. Matrix Diagrams are used to verify that all relationships have been identified for an ERD.
+True or False?
+● ☑️ True
+● False
+6.Which symbol is used to show that a particular attribute is mandatory?
+● ☑️ *
+● o
+● f
+● &
+7.Which of the following are used to show a relationship on an ERD? (Choose Three)
+● ☑️ Solid line
+● # symbol
+● ☑️ Crow’s foot
+● ☑️ Dashed line
+8. Relationship names are not shown on an ERD. True or False?
+● ☑️ False
+● True
+9. One Relationship can be mandatory in one direction and optional in the other direction.
+True or False?
+● ☑️ True
+● False
+10. In a business that sells pet food, choose the best relationship name between FOOD
+TYPE and ANIMAL (e.g. dog, horse, or cat). (Choose Two)
+● Each ANIMAL must be the seller of one or more FOOD TYPES.
+● ☑️ Each FOOD TYPE must be suitable for one or more ANIMALs.
+● Each FOOD TYPE may be manufactured by one or more ANIMALs.
+● ☑️ Each FOOD TYPE may be given to one or more ANIMALs.
+11. What are the three properties that every relationship should have?
+● ☑️ Name, optionality, cardinality
+● Transferability, degree, name
+● A UID bar, a diamond, an arc
+● Name, optionality, arcs
+12. ERDish describes a relationship in words. True or False?
+● ☑️ True
+● False
+13. Matrix Diagrams show Optionality and Cardinality of the ERDs they document. True or
+False?
+● ☑️ False
+● True
+14. Matrix Diagrams are developed BEFORE the ERD. True or False?
+● False
+● ☑️ True
+15. Which of the following are true about Cardi nality? (Choose Two)
+● ☑️ Cardinality tells "how many".
+● Cardinality specifies a counting number (like 1, 2, 3, 4 etc.) in a relationship.
+● Cardinality specifies whether something is required or not.
+● ☑️ Cardinality specifies only singularity or plurality, but not a specific plural number.
+16. Relationship Cardinality is important. True or False?
+● ☑️ True
+● False
+17. Which of the following are used to show Cardinality on an ERD? (Choose Two)
+● Dashed line
+● ☑️ Crow’s foot
+● Solid line
+● ☑️ Single toe
+18. When reading a relationship between 2 entities, the relationship is read both from left to
+right and right to left. True or False?
+● ☑️ True
+● False
+19. Entity boxes are drawn as
+● Hard Boxes
+● Normal Circles
+● Bold Circles
+● ☑️ Soft Boxes
+20. Which of the following are true about Relationship Optionality? (Choose Two)
+● Optionality specifies a counting number (like 1, 2, 3, 4 etc.) in a relationship.
+● ☑️ Optionality answers "may or must".
+● Optionality specifies only singularity or plurality, but not a specific plural number.
+● ☑️ Optionality specifies whether something is required or not.
+21. The many end of a Relationship is called:
+● Gulls Foot
+● Crows Ear
+● Pigs Ear
+● ☑️Crows Foot
+22. To identify an attribute as part of a unique identifier on an ER diagram, the # symbol
+goes in front of it. True or False?
+● ☑️True
+● False
+Q4
+1. All instances of the supertype must be an instance of one of the subtypes. True or False?
+● ☑️True
+● False
+2. Why is it important to identify and document structural rules?
+● ☑️ Ensures we know what data to store and how that data works together.
+● Ensures nothing. There are no benefits to be gained from documenting your
+Structural Business Rules. We need to concentrate on the Procedural Business
+Rules only.
+● Ensures we know what processes are in place and how to program them.
+● All of the Above.
+3. You can only create relationships to a Supertype, not to a Subtype. True or False?
+● True
+● ☑️False
+4. A supertype can only have two subtypes and no more. True or False?
+● True
+● ☑️ False
+5. A new system would have a mixture of both Procedural and Structural Business Rules as
+part of the documentation of that new system. True or False?
+● ☑️True
+● False
+6. A subtype can have a relationship not shared by the supertype. True or False?
+● ☑️True
+● False
+7. A subtype is drawn on an ERD as an entity inside the "softbox" of the supertype. True or
+False?
+● ☑️ True
+● False
+8. How would you model a business rule that states that on a student’s birthday, he does not
+have to attend his classes?
+● ☑️You cannot model this. You need to document it
+● Use a subtype
+● Make the attribute Birthdate mandatory
+● Use a supertype
+9. How should you handle constraints that cannot be modeled on an ER diagram?
+● Always let the network architect handle them
+● Explain them to the users so they can enforce them
+● ☑️List them on a separate document to be handled programmatically
+● All constraints must be modeled and shown on the ER diagram
+10. Business rules are important to data modelers because:
+● ☑️ A. They capture all of the needs, processes, and required functionality of the
+business.
+● B. All Business rules are easily implemented in the ERD diagram.
+● C. The data modeler must focus on structural rules, because they are easily
+represented diagrammatically and eliminate other rules that involve extra procedures
+or programming.
+● D. Both A and C are true.
+11. Which of the following is true about subtypes?
+● Subtypes should not be exhaustive.
+● ☑️Subtypes must be mutually exclusive.
+● Subtypes must not be mutually exclusive.
+● One instance of a supertype may belong to two subtypes.
+12. Why is it important to identify and document business rules?
+● ☑️ It allows you to create a complete data model and then check it for accuracy.
+● It allows you to improve the client's business.
+● It ensures that the data model will automate all manual processes.
+● None of the above.
+13. All ER diagrams must have one of each of the following: (Choose Two)
+● ☑️ One or more Entities
+● ☑️ Relationships between entities
+● At least one supertype and subtype
+● Arcs
+14. Can all constraints be modeled on an ER diagram?
+● Yes, all constraints must be modeled and shown on the ER diagram
+● No, in which case you should let the database administrator handle them
+● No, but you just explain them to the users so they can enforce them
+● ☑️ No, and those that cannot be modeled should be listed on a separate document
+to be handled programmatically
+15. A subtype is shown on an ERD as an entity with a one to many relationship to the
+supertype. True or False?
+● True
+● ☑️ False
+16. Which of the following is an exa
+mple of a structural business rule?
+● Buildings to be purchased by the business must be current with earthquake building
+code.
+● ☑️All employees must belong to at least one department.
+● All products will have a selling price no less than 30% greater than wholesale.
+● All overdue payments will have an added 10% late fee.
+17. A Supertype can have only one subtype. True or False?
+● True
+● ☑️False
+18.A business rule such as "We only ship goods after customers have completely paid any
+outstanding balances on their account" is best enforced by:
+● We need to trust our customers, and we know they will pay some day.
+● Making the payment attribute optional.
+● Making the payment attribute null.
+● ☑️Creating additional programming code to verify no goods are shipped until the
+account has been settled in full.
+19. All instances of a subtype may be an instance of the supertype but does not have to.
+True or False?
+● True
+● ☑️False
+20. How would you model a business rule that states that girls and boys may not attend
+classes together ?
+● Make the attribute Gender optional
+● ☑️Supertype STUDENT has two subtypes BOY and GIRL which are related to
+GENDER, which is related to CLASS
+● Use a supertype
+● Make the attribute Gender mandatory
+21. A business rule such as "All accounts must be paid in full within 10 days of billing" is best
+enforced by:
+● Making the payment attribute mandatory.
+● Creating a message to be printed on every bill that reminds the customer to pay
+within ten days.
+● ☑️Creating additional programming code to identify and report accounts past due.
+● Making the relationship between CUSTOMER and PAYMENT fully mandatory and
+1:1 on both sides.
+22. All instances of a subtype must be an instance of the supertype. True or False?
+● ☑️True
+● False
+Q5
+1. Intersection Entities often have the relationships participating in the UID, so the
+relationships are often barred. True or False?
+● ☑️ True
+● False
+2. What relationship is described by the statements: "Each CUSTOMER may place one or
+more ORDERS, each ORDER must be placed by one and only one CUSTOMER"
+● ☑️ One to Many
+● Many to Many
+● One to One
+● Many to More
+3. What uncommon relationship is described by the statements: "Each DNA SAMPLE may
+be taken from one and only one PERSON and each PERSON may provide one and only
+one DNA SAMPLE"
+● ☑️ One to One Optional
+● One to Many Optional
+● One to Many Mandatory
+● Many to Many Mandatory
+4. When you resolve a M:M, you simply re-draw the relationships between the two original
+entities; no new entities are created. True or False?
+● True
+● ☑️False
+5. Many to many relationships between entities usually hide what?
+● ☑️Another entity
+● More attributes
+● Another relationship
+● Uniqueness
+6. One to many relationships are the most uncommon type of relationships in an ERD. True
+or False?
+● True
+● ☑️False
+7. A Diamond on a relationship indicates the Relationship as Non-Transferable. True or
+False?
+● ☑️True
+● False
+8. A relationship on an ERD can have attributes. True or False?
+● True
+● ☑️False
+9. Which of the following pairs of entities is most likely to be modeled as a 1:1 relationship?
+● CAR and WHEEL
+● TEACHER and SUBJECT AREA
+● ☑️PERSON and FINGERPRINT
+● TREE and BRANCH
+10. Relationships can be Redundant. True or False?
+● ☑️True
+● False
+11. If a relationship can NOT be moved between instances of the entities it connects, it is
+said to be:
+● Optional
+● ☑️Non-Transferable
+● Transferable
+● Mandatory
+12. The relationship between CUSTOMER and RECEIPT is an example of a
+non-transferable relationship. True or False?
+● ☑️True
+● False
+13. A barred relationship on an ERD signifies that the UID of the intersection entity is
+inherited from the entities that made up the original many to many relationship. True or
+False?
+● ☑️True
+● False
+14. A non-transferable relationship is represented by which of the following symbols?
+● Triangle
+● Circle
+● ☑️Diamond
+● Heart
+15. Which of the following is an example of a non-transferable relationship?
+● STUDENT to COURSE
+● ☑️PERSON to BIRTH PLACE
+● EMPLOYEE to DEPARTMENT
+● TEACHER to SCHOOL
+16. Which of the following pairs of entities is most likely to be modeled as a M:M
+relationship?
+● PERSON and FINGERPRINT
+● ☑️TEACHER and SUBJECT AREA
+● CAR and WHEEL
+● TREE and BRANCH
+17. Many to many relationships must be left in the Model. It is important to have them
+documented as M-M. True or False?
+● True
+● ☑️False
+18. When you resolve a M:M by creating an intersection entity, this new entity will always
+inherit:
+● The UID's from the entities in the original M:M.
+● ☑️A relationship to each entity from the original M:M.
+● The attributes of both related entities.
+● Nothing is inherited from the original entities and relationship.
+19.If an intersection entity is formed that contains no attributes of its own, its uniqueness
+may be modeled by
+● Creating new attributes.
+● ☑️Barring the relationships to the original entities.
+● Placing the UID attributes from the original entities into the intersection entity.
+● None of the above.
+20.Every ERD must have at least one non-transferable relationship. True or False?
+● True
+● ☑️False
+21.If a relationship can be moved between instances of the entities it connects, it is said to
+be:
+● ☑️Transferable
+● Recursive
+● Implicit
+● Committed
+22.A non-transferable relationship means the relationship is mandatory at both sides. True or
+False?
+● ☑️False
+● True
+23. Non-transferable relationships can only be mandatory, not optional. True or False?
+● True
+● ☑️False
+24. If two entities have two relationships between them, these relationships can be either
+__________ or __________.
+● ☑️Redundant or Required
+● Resourced and Really Good
+● Redundant and Replicated
+● Replicated or Required
+25. What do you call the entity created when you resolve a M:M relationship?
+● Recursive entity
+● M:M entity
+● ☑️Intersection entity
+● Inclusion entity
+26. If the same relationship is represented twice in an Entity Relationship Model, it is said to
+be:
+● Replicated
+● ☑️Redundant
+● Resourceful
+● Removable
+Q6
+1. People are not born with “numbers”, but a lot of systems assign student numbers,
+customer IDs, etc. These are known as a/an __________ UID.
+● Unrealistic
+● Structured
+● ☑️Artificial
+● Identification
+2. An attribute can have multiple values and still be in 1st Normal Form. True or False?
+● True
+● ☑️False
+3. If an entity has a multi-valued attribute, to conform to the rule of 1st Normal Form we:
+● ☑️Create an additional entity and relate it to the original entity with a 1:M
+relationship.
+● Do nothing, an entity does not have to be in 1st Normal Form
+● Make the attribute optional
+● Create an additional entity and relate it to the original entity with a M:M relationship.
+4.When all attributes are single-valued, the database model is said to conform to:
+● 3rd Normal Form
+● ☑️1st Normal Form
+● 2nd Normal Form
+● 4th Normal Form
+5. The candidate UID that is chosen to identify an entity is called the Primary UID; other
+candidate UIDs are called Secondary UIDs.
+● ☑️Yes, this is the way UID's are named.
+● No, each Entity can only have one UID, the secondary one.
+● No, after UIDs are first sorted, the first one is called the Primary UID, the second is
+the Secondary UID, etc.
+● No, it is not possible to have more than one UID for an Entity.
+6. Where an entity has more than one attribute suitable to be the Primary UID, these are
+known as ____________ UIDs.
+● Composite
+● Simple
+● Secondary
+● ☑️Candidate
+7. Any Non-UID attribute must be dependent upon the entire UID. True or False?
+● ☑️True
+● False
+8. An entity can only have one Primary UID. True or False?
+● ☑️True
+● False
+9. When any attribute in an entity is dependent on any other non-UID attribute in that entity,
+this is known as:
+● ☑️Transitive dependency
+● Non-dependency
+● Dependency
+● Functional dependency
+10. Examine the following entity and decide which attribute breaks the 2nd Normal Form
+rule:
+ENTITY: RECEIPT
+ATTRIBUTES:
+#CUSTOMER ID
+#STORE ID
+STORE LOCATION
+DATE
+● STORE ID
+● ☑️STORE LOCATION
+● CUSTOMER ID
+● DATE
+11. Examine the following Entity and decide which rule of Normal Form is being violated:
+ENTITY: CLIENT
+ATTRIBUTES:
+# CLIENT ID
+FIRST NAME
+LAST NAME
+ORDER ID
+STREET
+● ☑️1st Normal Form
+● 2nd Normal Form
+● 3rd Normal Form
+● None of the above, the entity is fully normalised.
+12. To convert an entity with a multi-valued attribute to 1st Normal Form, we create an
+additional entity and relate it to the original entity with a 1:1 relationship. True or False?
+● True
+● ☑️False
+13. When is an entity in 2nd Normal Form?
+● ☑️When all non-UID attributes are dependent upon the entire UID.
+● When attributes with repeating or multi-values are present.
+● When no attributes are mutually independent and all are fully dependent on the
+primary key.
+● None of the Above.
+14. Examine the following Entity and decide which rule of Normal Form is being violated:
+ENTITY: CLIENT ORDER
+ATTRIBUTES:
+# CLIENT ID
+# ORDER ID
+FIRST NAME
+LAST NAME
+ORDER DATE
+CITY
+● 3rd Normal Form.
+● 1st Normal Form.
+● ☑️2nd Normal Form.
+● None of the above, the entity is fully normalised.
+15. Examine the following Entity and decide which rule of Normal Form is being violated:
+ENTITY: CLIENT
+ATTRIBUTES:
+# CLIENT ID
+FIRST NAME
+LAST NAME
+STREET
+CITY
+● 3rd Normal Form.
+● 1st Normal Form.
+● 2nd Normal Form.
+● ☑️None of the above, the entity is fully normalised.
+16.Examine the following entity and decide how to make it conform to the rule of 2nd Normal
+Form:
+ENTITY: RECEIPT
+ATTRIBUTES:
+#CUSTOMER ID
+#STORE ID
+STORE LOCATION
+DATE
+● Delete the attribute STORE ID
+● ☑️Move the attribute STORE LOCATION to a new entity, STORE, with a UID of
+STORE ID, and create a relationship to the original entity.
+● Do nothing, it is already in 2nd Normal Form.
+● Move the attribute STORE LOCATION to a new entity, STORE, with a UID of STORE
+LOCATION, and create a relationship to the original entity.
+17.If an entity has no attribute suitable to be a Primary UID, we can create an artificial one.
+True or False?
+● ☑️ True
+● False
+18.Which of the following would be suitable UIDs for the entity EMPLOYEE? (Choose Two)
+● Last Name
+● Address
+● ☑️Employee ID
+● ☑️Social Security Number
+19.To resolve a 2nd Normal Form violation, we:
+● ☑️Move the attribute that violates 2nd Normal Form to a new entity with a
+relationship to the original entity.
+● Move the attribute that violates 2nd Normal Form to a new ERD. X
+● Do nothing, an entity does not need to be in 2nd Normal Form.
+● Delete the attribute that was causing the violation.
+20.As a database designer, you do not need to worry about where in the datamodel you
+store a particular attribute; as long as you get it onto the ERD, your job is done. True or
+False?
+● True
+● ☑️False
+21.An entity ORDER has the attributes Order ID, Order Date, Product ID, Customer ID. This
+entity is in 1st Normal Form. True or False?
+● True
+● ☑️False
+22.There is no limit to how many attributes can make up an entity’s UID. True or False?
+● ☑️True
+● False
+23. A transitive dependency exists when any attribute in an entity is dependent on any other
+non-UID attribute in that entity. True or False?
+● ☑️True
+● False
+24. The Rule of 3rd Normal Form states that No Non-UID attribute can be dependent on
+another non-UID attribute. True or False?
+● ☑️True
+● False
+25. A candidate UID that is not chosen to be the Primary UID is called:
+● Simple
+● ☑️Secondary
+● Composite
+● Artificial
+26. Normalizing an Entity to 1st Normal Form is done by removing any attributes that contain
+multiple values. True or False?
+● ☑️True
+● False
+27. A unique identifier can only be made up of one attribute. True or False?
+● True
+● ☑️False
+28. What is the rule of Second Normal Form?
+● No non-UID attributes can be dependent on any part of the UID.
+● Some non-UID attributes can be dependent on the entire UID.
+● ☑️All non-UID attributes must be dependent upon the entire UID.
+● None of the above.
+29.Examine the following entity and decide which attribute breaks the 2nd Normal Form rule:
+ENTITY: CLASS
+ATTRIBUTES:
+#CLASS ID
+#TEACHER ID
+SUBJECT
+TEACHER NAME
+● SUBJECT
+● CLASS ID
+● ☑️TEACHER NAME
+● TEACHER ID
+30. When data is only stored in one place in a database, the database conforms to the rules
+of ________.
+● ☑️Normalization
+● Normality
+● Multiplication
+● Reduction
+31. Examine the following Entity and decide which sets of attributes break the 3rd Normal
+Form rule:
+ENTITY: TRAIN
+ATTRIBUTES:
+TRAIN ID
+MAKE
+DRIVER ID
+DRIVER NAME
+DATE OF MANUFACTURE
+● TRAIN ID, MAKE
+● ☑️DRIVER ID, DRIVER NAME
+● MAKE, DATE OF MANUFACTURE
+● None of the above, the entity is already in 3rd Normal Form.
+32. When data is stored in more than one place in a database, the database violates the
+rules of ________.
+● Normalcy
+● Replication
+● ☑️Normalization
+● Decency
+33. A UID can be made up from the following: (Choose Two)
+● Synonyms
+● ☑️Relationships
+● ☑️Attributes
+● Entities
+Q7
+1. A Hierarchical relationship is a series of relationships that reflect entities organized into
+successive levels. True or False?
+● ☑️True
+● False
+2.Cascading UIDs are a feature often found in what type of Relationship?
+● ☑️Hierarchical Relationship
+● Recursive Relationship
+● Invalid Relationship
+● General Relationship
+3.An arc can often be modeled as Supertype and Subtypes. True or False?
+● ☑️True
+● False
+4. To visually represent exclusivity between two or more relationships in an ERD you would
+most likely use an _______.
+● Attribute
+● Relationship
+● UID
+● ☑️Arc
+5.Arcs model an Exclusive OR constraint. True or False?
+● ☑️True
+● False
+6. A relationship between an entity and itself is called a/an:
+● ☑️Recursive Relationship
+● General Relationship
+● Heirarchical Relationship
+● Invalid Relationship
+7. Which of the following can be added to a relationship?
+● An attribute
+● ☑️An arc can be assigned
+● An optional attribute can be created
+● A composite attribute
+8.All relationships participating in an arc must be mandatory. True or False?
+● True
+● ☑️False
+9. A recursive relationship must be Mandatory at both ends. True or False?
+● ☑️False
+● True
+10.Which of the following would best be represented by an arc?
+● STUDENT (senior, male)
+● ☑️STUDENT (University, Technical College)
+● STUDENT (graduating, female)
+● STUDENT (Grade A student, Average Student)
+11. Business organizational charts are often modeled as a Hierarchical relationship. True or
+False?
+● ☑️True
+● False
+12. Which of the following would best be represented by an arc?
+● STUDENT (Grade A student, Average Student)
+● TEACHER (Female, Bob)
+● ☑️DELIVERY ADDRESS (Home, Office)
+● PARENT (Girl, Bob)
+13. Every business has restrictions on which attribute values and which relationships are
+allowed. These are known as:
+● ☑️Constraints.
+● Entities.
+● Attributes.
+● Relationships.
+14. A particular problem may be solved using either a Recursive Relationship or a
+Hierarchical Relationship, though not at the same time. True or False?
+● ☑️True
+● False
+15. A single relationship can be both Recursive and Hierarchical at the same time. True or
+False?
+● True
+● ☑️False
+16. Arcs are Mandatory in Data Modeling. All ERD's must have at least one Arc. True or
+False?
+● True
+● ☑️False
+17. A Recursive Relationship is represented on an ERD by a/an:
+● ☑️Pig’s Ear
+● Crow’s Foot
+● Single Toe
+● Dog’s Tail
+18. Arcs are used to visually represent ________ between two or more relationships in an
+ERD.
+● Sameness
+● Inheritance
+● Differences
+● ☑️Exclusivity
+19. An entity could have more than one attribute that would be a suitable Primary UID. True
+or False?
+● ☑️True
+● False
+Q8
+1.Conditional non-transferability refers to a relationship that may or may not be transferable,
+depending on time. True or False?
+● ☑️True
+● False
+2.In an ERD, it is a good idea to group your entities according to the expected volumes. By
+grouping high volume entities together, the diagrams could become easier to read. True or
+False?
+● ☑️True
+● False
+3.Historical data must never be kept. True or False?
+● True
+● ☑️False
+4. Which of the following statements are true for ERD's to enhance their readability?
+(Choose Two)
+● ☑️It is OK to break down a large ERD into subsets of the overall picture. By doing so,
+you end up with more than one ERD that, taken together, documents the entire
+system.
+● ☑️Avoid crossing one relationship line with another.
+● The crows feet (many ends) can point whichever way is the easiest to draw.
+● You must ensure that you have every single entity—even if hundreds of them
+exist—on one single, big diagram.
+5. Modeling historical data can produce a unique identifier that includes a date. True or
+False?
+● ☑️True
+● False
+6. How do you know when to use the different types of time in your design?
+● The rules are fixed and should be followed.
+● Always model time; you can take it out later if it is not needed.
+● You would first determine the existence of the concept of time and map it against the
+Greenwich Mean Time.
+● ☑️It depends on the functional needs of the system.
+7.All systems must include functionality to provide logging or journaling in conceptual data
+models. True or False?
+● True
+● ☑️False
+8. All systems must have an entity called WEEK with a holiday attribute so that you know
+when to give employees a holiday. True or False?
+● True
+● ☑️False
+9. In a payroll system, it is desirable to have an entity called DAY with a holiday attribute
+when you want to track special holiday dates. True or False?
+● ☑️True
+● False
+10.Formal rules exist for drawing ERD's. You must always follow them, even if it results in an
+ERD that is difficult to read. True or False?
+● True
+● ☑️False
+11. You are doing a data model for a computer sales company where the price fluctuates on
+a regular basis. If you want to allow the company to modify the price and keep track of the
+changes, what is the best way to model this?
+● A. Create a product entity and a related price entity with start and end dates, and
+then let the users enter the new price whenever required.
+● B. Create a new item and a new price every day.
+● C. Use a price entity with a start and end date.
+● D. Allow them to delete the item and enter a new one.
+● ☑️E. Both A and C.
+12. When a system requires that old values for attributes are kept on record, this is known as
+Journaling or Logging. True or False?
+● ☑️True
+● False
+13. Which of the following scenarios should be modeled so that historical data is kept?
+(Choose Two)
+● BABY and AGE
+● ☑️CUSTOMER and ORDERS
+● TEACHER and AGE
+● ☑️CUSTOMER and PAYMENTS
+14. If you have an entity with a DATE attribute, in addition to other attributes that track date
+characteristics, you should create a DAY entity. True or False?
+● ☑️True
+● False
+15. No formal rules exist for drawing ERD's. The most important thing is to make sure that all
+entities, attributes, and relationships are documented on the diagram, and the diagram is
+clear and readable. True or False?
+● ☑️True
+● False
+16. What is the function of logging or journaling in conceptual data models?
+● Creates a fixed time for all events in a data model.
+● Represents entities as time in the data model.
+● Gives a timestamp to all entities.
+● ☑️Allows you to track the history of attribute values, relationships, and/or entire
+entities.
+17. When you add the concept of time to your data model, your model becomes more
+complex. True or False?
+● ☑️True
+● False
+18. Which of the following scenarios should be modeled so that historical data is kept?
+(Choose Two)
+● STUDENT and AGE
+● LIBRARY and NUMBER OF BOOKS
+● ☑️LIBRARY and BOOK
+● ☑️STUDENT and GRADE
+19. Which of the following is a logical constraint that could result from considering how time
+impacts an example of data storage?
+● End Date must be before the Start Date.
+● EMPLOYEE periods can overlap causing the database to crash.
+● ☑️ An ASSIGNMENT may only refer to an EMPLOYEE with a valid employee record
+at the Start Date of the ASSIGNMENT.
+● Dates must be stored with Time.
+20. Modeling historical data is optional. True or False?
+● ☑️True
+● False
+21. When modeling historical data the unique identifier is always made up of a barred
+relationship from the original two entities. True or False?
+● True
+● ☑️False
+22. In an ERD, High Volume Entities usually have very few relationships to other entities.
+True or False?
+● True
+● ☑️False
+23. There is no point in trying to group your entities together on your diagram according to
+volume, and making a diagram look nice is a waste of time. True or False?
+● True
+● ☑️False
+24. Why would you want to model a time component when designing a system that lets
+people buy bars of gold?
+● ☑️The price of gold fluctuates and, to determine the current price, you need to know
+the time of purchase.
+● The Government of your country might want to be notified of this transaction.
+● Sales people must determine where the gold is coming from.
+● You would not want to model this; it is not important.
+25. You must make sure all entities of a proposed system can fit onto one diagram. It is not
+allowed to break up a data model into more than one diagram. True or False?
+● True
+● ☑️False
+26. Which of the following would be a logical constraint when modeling time for a City entity?
+● Daily traffic patterns must be monitored to determine how many law enforcement
+officers are needed.
+● If you are doing a system for any French City, you would need security clearance.
+● ☑️Cities may change their names and/or country association if the borders of a
+country change.
+● People are born in the city and people die in the city.
+27. There are no circumstances where you would create a DAY entity. True or False?
+● True
+● ☑️False
+28. Which of the following would be a logical constraint when modeling time for a country
+entity?
+● People have births and deaths in their countries that must be tracked by the system.
+● Daily traffic patterns must be monitored to determine which countries are
+overcrowded.
+● If you are doing a system for France or Germany, you would need security clearance.
+● ☑️Countries may change their names and/or borders over a period of time.
+29. Which of the following statements are true to enhance the readability of ERDs? (Choose
+Two)
+● ☑️Relationship lines should not cross.
+● ☑️Crows feet (the many-ends of relationships) should consistently point the same
+direction where possible, either South & East or North & West.
+● Crossing relationship lines help the readability of the diagram.
+● It does not matter which way the crows feet (many ends of a relationship) point.
+30. When a relationship may or may not be transferable, depending on time, this is known as
+a/an:
+● Arc
+● Non-transferable Relationship
+● Transferable Relationship
+● ☑️Conditional Non-transferable Relationship
+31. Historical data should always be kept. True or False?
+● True
+● ☑️False
+32. You are doing a data model for a computer sales company where the price of postage
+depends upon the day of the week that goods are shipped. So shipping is more expensive if
+the customer wants a delivery to take place on a Saturday or Sunday. What would be the
+best way to model this?
+● ☑️Use a Delivery Day entity, which holds prices against week days, and ensure we
+also have an attribute for the Requested Delivery Day in the Order Entity.
+● Allow them to enter whatever delivery charge they want.
+● Update the prices in the system, print out the current prices when they change, and
+pin them on the company noticeboard.
+● Email current prices to all employees whenever a price changes.
+Q9
+1.When mapping supertypes, relationships at the supertype level transform as usual.
+Relationships at subtype level are implemented as foreign keys, but the foreign key columns
+all become mandatory. True or False?
+● True
+● ☑️False
+2.Attributes become columns in a database table. True or False?
+● ☑️True
+● False
+3.The explanation below is an example of which constraint type?
+A primary key must be unique, and no part of the primary key can be null.
+● ☑️Entity integrity
+● Column integrity
+● User-defined integrity
+● Referential integrity
+4.A barred Relationship will result in a Foreign Key column that also is part of:
+● ☑️The Primary Key
+● The Column Name
+● The Check Constraint
+● The Table Name
+5.When mapping supertypes, relationships at the supertype level transform as usual.
+Relationships at the subtype level are implemented as foreign keys, but the foreign key
+columns all become optional. True or False?
+● ☑️True
+● False
+6.An Arc is transformed to the physical model by adding a foreign Key for every relationship
+in the Arc. True or False?
+● ☑️True
+● False
+7.In an Oracle database, why would 1_TABLE not work as a table name?
+● The database does not understand all capital letters.
+● ☑️Object names must not start with a number. They must begin with a letter.
+● TABLE is a reserved word.
+● There is no problem here. You can create a table called 1_TABLE.
+8. In an Oracle database, why would the following table name not be allowed ‘EMPLOYEE
+JOBS’?
+● JOBS is a reserved word
+● EMPLOYEE is a reserved word
+● ☑️You cannot have spaces between words in a table name
+● The database does not understand all capital letters
+9.Identify all of the incorrect statements that complete this sentence: A primary key is...
+(Choose Three)
+● ☑️Only one column that must be null.
+● ☑️A set of columns in one table that uniquely identifies each row in another table.
+● One or more columns in a table that uniquely identifies each row in that table.
+● ☑️A single column that uniquely identifies each column in a table.
+10.The conceptual model is transformed into a physical model. The physical implementation
+will be a relational database. True or False?
+● ☑️True
+● False
+11.In a physical model, many to many relationships are resolved via a structure called a(n):
+______________
+● Subtype
+● Intersection Entity
+● Supertypes
+● ☑️Intersection Table
+12.One-to-One relationships are transformed into Check Constraints in the tables created at
+either end of that relationship. True or False?
+● True
+● ☑️False
+13.A table should have a primary key. True or False?
+● ☑️True
+● False
+14.The explanation below is an example of which constraint type?
+A column must contain only values consistent with the defined data format of the column.
+● User-defined integrity
+● Referential integrity
+● Entity integrity
+● ☑️Column integrity
+15.Which of the following is a valid reason for considering a Subtype Implementation?
+● The resulting table will reside in a single database and be used by just ONE user.
+● Most of the relationships are at the supertype level.
+● ☑️Business functionality, business rules, access paths, and frequency of access are
+all very different between the subtypes.
+● The common access paths for the supertypes are different.
+16. In a physical data model, a relationship is represented as a:
+● Column
+● Primary Key
+● ☑️Foreign Key
+● Unique Identifier
+17. An "Arc Implementation" can be done just like any other Relationship – you simply add
+the required Foreign Keys. True or False?
+● True
+● ☑️False
+18: Foreign keys cannot be null when
+● It refers to another table
+● ☑️It is part of a primary key
+● It contains three or more columns
+● It refers to the same table
+19. It is possible to implement non-transferability via a simple Foreign Key Relationship. True
+or False?
+● ☑️False
+● True
+20. In a physical data model, a relationship is represented as a combination of: (Choose
+Two)
+● ☑️Foreign Key
+● ☑️Primary Key or Unique Key
+● Column
+● Check Constraint or Unique Key
+21. A foreign key always refers to a primary key in the same table. True or False?
+● ☑️False
+● True
+22. The explanation below is an example of which constraint type?
+If the value in the balance column of the ACCOUNTS table is below 100, we must send a
+letter to the account owner which will require extra programming to enforce.
+● Entity integrity
+● ☑️User-defined integrity
+● Referential integrity
+● Column integrity
+23. The "Arc Implementation" is a synonym for what type of implementation?
+● ☑️Suptype and Subtype Implementation
+● Suptype Implementation
+● Cascade Implementation
+● Subtype Implementation
+24. Column integrity refers to
+● Columns always containing text data less than 255 characters
+● Columns always having values
+● Columns always containing positive numbers
+● ☑️Columns always containing values consistent with the defined data format
+25. When translating an arc relationship to a physical design, you must turn the arc
+relationships into foreign keys. What additional step must you take with the created foreign
+keys to ensure the exclusivity principle of arc relationships? (Assume that you are
+implementing an Exclusive Design) (Choose Two)
+● Make all relationships mandatory
+● ☑️Make all relationships optional
+● ☑️Create an additional check constraint to verify that one foreign key is populated
+and the others are not
+● All the above
+26. The Physical model is created by transforming which of the following models?
+● Constraint
+● Physical
+● Table
+● ☑️Conceptual
+27. Why would this table name NOT work in an Oracle database? this_year_end+next_year
+● Table names must begin with an alphabetic character.
+● It is too long.
+● ☑️The Plus sign + is not allowed in object names.
+● None of the above.
+28. One-to-One relationships are transformed into Foreign Keys in the tables created at
+either end of that relationship. True or False?
+● True
+● ☑️False
+29. One-to-Many Optional to Mandatory becomes a ______________ on the Master table.
+● Optional Foreign Key
+● ☑️Mandatory Foreign Key
+● Unique Key
+● Primary Key
+30. Foreign keys must be null. True or False?
+● True
+● ☑️False
+31. The Oracle Database can implement a many-to-many relationship. You simply create
+two foreign keys between the two tables. True or False?
+● True
+● ☑️False
+32. Identify all of the correct statements that complete this sentence: A primary key is...
+(Choose Three)
+● ☑️A single column that uniquely identifies each row in a table
+● Only one column that cannot be null
+● ☑️A set of columns that uniquely identifies each row in a table
+● ☑️A set of columns and keys in a single table that uniquely identifies each row in a
+single table
+33. In a physical data model, an entity becomes a ____________.
+● ☑️Table
+● Attribute
+● Constraint
+● Column
+34. The transformation from an ER diagram to a physical design involves changing
+terminology. Entities in the ER diagram become ________.
+● Columns
+● ☑️Tables
+● Foreign Keys
+● Unique Keys
+35. A foreign key cannot refer to a primary key in the same table. True or False?
+● ☑️False
+● True
+36. Relationships on an ERD can only be transformed into UIDs in the physical model. True
+or False?
+● True
+● ☑️False
+37. To resolve a many to many relationship in a physical model you create a(n)
+__________________?
+● Unique key constraints
+● ☑️Intersection table
+● Intersection entity
+● Two tables with Foreign key constraints between them
+38. When an Arc is transformed to the physical model every relationship in the Arc becomes
+a mandatory Foreign Key. True or False?
+● True
+● ☑️False
+39. In a physical data model, an attribute becomes a ____________.
+● Foreign Key
+● ☑️Column
+● Table
+● Constraint
+40. The explanation below is an example of which constraint type?
+The value in the dept_no column of the EMPLOYEES table must match a value in the
+dept_no column in the DEPARTMENTS table.
+● Column integrity
+● User-defined integrity
+● ☑️Referential integrity
+● Entity integrity
+41. Two entities A and B have an optional (A) to Mandatory (B) One-to-One relationship.
+When they are transformed, the Foreign Key(s) is placed on:
+● Both tables A and B get a new column and a Foreign Key.
+● The table A
+● ☑️The table B
+● Nowhere, One-to-One relationships are not transformed.
+MIDTERM
+1. All of the following would be instances of the entity ANIMAL SPECIES, except which one?
+● Dog
+● Elephant
+● Bird
+● ☑️Leaf
+3. During which phases of the System Development Life Cycle would you roll out the system
+to the users?
+● Strategy and Analysis
+● Design and Production
+● ☑️Transition and Production
+● Build and Transition
+4. Systems are always just rolled out as soon as the programming phase is finished. No
+further work is required once the development is finished. True or False?
+● ☐ True
+● ☑️False

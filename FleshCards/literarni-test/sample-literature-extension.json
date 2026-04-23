@@ -1,0 +1,123 @@
+{
+  "works": {
+    "divineComedy": {
+      "title": "Božská komedie",
+      "author": "Dante Alighieri",
+      "period": "Středověk (14. století)",
+      "genre": "Epos",
+      "questions": {
+        "genre": [
+          {
+            "question": "Do jakého literárního žánru patří Božská komedie?",
+            "answers": ["Epos", "Román", "Drama", "Lyrika"],
+            "correct": [0]
+          },
+          {
+            "question": "Jaký je hlavní žánrový rámec Božské komedie?",
+            "answers": ["Alegorický epos", "Historický román", "Psychologická drama", "Filozofická lyrika"],
+            "correct": [0]
+          }
+        ],
+        "author": [
+          {
+            "question": "Kdo je autorem Božské komedie?",
+            "answers": ["Petrarka", "Boccaccio", "Dante Alighieri", "Cino da Pistoia"],
+            "correct": [2]
+          },
+          {
+            "question": "Ve které zemi Dante Alighieri žil?",
+            "answers": ["Francie", "Itálie", "Španělsko", "Německo"],
+            "correct": [1]
+          }
+        ],
+        "authorDetails": [
+          {
+            "question": "Ve kterém roce se narodil Dante Alighieri?",
+            "answers": ["1250", "1265", "1280", "1235"],
+            "correct": [1]
+          },
+          {
+            "question": "Ve kterém roce zemřel Dante Alighieri?",
+            "answers": ["1321", "1330", "1315", "1325"],
+            "correct": [0]
+          },
+          {
+            "question": "Jak se jmenovala Dantova manželka?",
+            "answers": ["Beatrice", "Gemma Donati", "Francesca", "Laura"],
+            "correct": [1]
+          },
+          {
+            "question": "Jaký politický režim ovlivňoval Dantovo dílo?",
+            "answers": ["Feudalismus", "Republikánský systém", "Monarchie", "Teokracie"],
+            "correct": [1]
+          }
+        ],
+        "authorPeriod": [
+          {
+            "question": "Ve kterém historickém období žil Dante Alighieri?",
+            "answers": ["Renesance", "Středověk", "Baroko", "Osvícenské období"],
+            "correct": [1]
+          },
+          {
+            "question": "Která kulturní éra předcházela Dantově tvorbě?",
+            "answers": ["Antika", "Renesance", "Gotika", "Románský sloh"],
+            "correct": [2]
+          },
+          {
+            "question": "Jaký sociální fenomén charakterizoval dobu Dantovy tvorby?",
+            "answers": ["Růst měst", "Feudální rozpad", "Náboženské války", "Vědecká revoluce"],
+            "correct": [0]
+          }
+        ]
+      }
+    },
+    "faust": {
+      "title": "Faust",
+      "author": "Johann Wolfgang von Goethe",
+      "period": "Německý klasicismus (18.-19. století)",
+      "genre": "Drama",
+      "questions": {
+        "genre": [
+          {
+            "question": "Do jakého literárního žánru patří dílo Faust?",
+            "answers": ["Román", "Drama", "Epos", "Báseň"],
+            "correct": [1]
+          }
+        ],
+        "author": [
+          {
+            "question": "Kdo je autorem díla Faust?",
+            "answers": ["Schiller", "Goethe", "Heine", "Hölderlin"],
+            "correct": [1]
+          }
+        ],
+        "authorDetails": [
+          {
+            "question": "Ve kterém roce se narodil Johann Wolfgang von Goethe?",
+            "answers": ["1749", "1755", "1760", "1745"],
+            "correct": [0]
+          },
+          {
+            "question": "Ve kterém roce zemřel Goethe?",
+            "answers": ["1832", "1825", "1840", "1835"],
+            "correct": [0]
+          }
+        ],
+        "authorPeriod": [
+          {
+            "question": "Ve kterém historickém období žil Goethe?",
+            "answers": ["Středověk", "Renesance", "Německý klasicismus", "Romantismus"],
+            "correct": [2]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2024-01-12T15:00:00.000Z",
+    "description": "Rozšíření literárních děl pro test z češtiny",
+    "worksAdded": 2,
+    "totalQuestions": 14
+  }
+}

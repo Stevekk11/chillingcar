@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuffle Test</title>
+</head>
+<body>
+    <h1>Shuffle Test</h1>
+    <button id="testShuffle">Test Shuffling</button>
+    <div id="output"></div>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        document.getElementById('testShuffle').addEventListener('click', function() {
+            // Test shuffleArray function
+            const testArray = [1, 2, 3, 4, 5];
+            const shuffled = shuffleArray(testArray);
+            document.getElementById('output').innerHTML += 
+                '<p>Original: ' + JSON.stringify(testArray) + '</p>' +
+                '<p>Shuffled: ' + JSON.stringify(shuffled) + '</p>';
+            
+            // Test answer shuffling with the example from the user's request
+            const testQuestion = {
+                question: "Information which was gained from data is the same as: (Choose Two)",
+                answers: [
+                    "Raw Materials",
+                    "Knowledge",
+                    "Intelligence",
+                    "There is no difference between data and information."
+                ],
+                correct: [1, 2]
+            };
+            
+            const shuffledQuestion = shuffleAnswers(testQuestion);
+            document.getElementById('output').innerHTML += 
+                '<p>Original Question: ' + testQuestion.question + '</p>' +
+                '<p>Original Answers: ' + JSON.stringify(testQuestion.answers) + '</p>' +
+                '<p>Original Correct Indices: ' + JSON.stringify(testQuestion.correct) + '</p>' +
+                '<p>Shuffled Answers: ' + JSON.stringify(shuffledQuestion.answers) + '</p>' +
+                '<p>Shuffled Correct Indices: ' + JSON.stringify(shuffledQuestion.correct) + '</p>';
+                
+            // Verify that the correct answers still point to the right content
+            const correctAnswers = shuffledQuestion.correct.map(idx => shuffledQuestion.answers[idx]);
+            const originalCorrectAnswers = testQuestion.correct.map(idx => testQuestion.answers[idx]);
+            document.getElementById('output').innerHTML += 
+                '<p>Original Correct Answers: ' + JSON.stringify(originalCorrectAnswers) + '</p>' +
+                '<p>Shuffled Correct Answers: ' + JSON.stringify(correctAnswers) + '</p>';
+                
+            // Fix the comparison - need to sort both arrays before comparing
+            const matches = JSON.stringify(originalCorrectAnswers.slice().sort()) === JSON.stringify(correctAnswers.slice().sort());
+            document.getElementById('output').innerHTML += 
+                '<p>Match: ' + matches + '</p><hr>';
+        });
+    </script>
+</body>
+</html>

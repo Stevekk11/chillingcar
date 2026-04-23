@@ -1,0 +1,121 @@
+// Show question
+function showQuestion() {
+  if (currentQuestionIndex >= currentQuestions.length) {
+    showCompletionScreen()
+    return
+  }
+
+  const question = currentQuestions[currentQuestionIndex]
+  // For module-specific questions, we need to calculate the actual index in the original quizData array
+  const actualIndex = getOriginalQuestionIndex(question)
+
+  // Check if we're showing wrong answers
+  let userAnswer = actualIndex !== -1 ? userAnswers[actualIndex] : undefined
+  let wrongAnswerData = null
+  
+  if (showingWrongOnly && window.wrongAnswersData) {
+    wrongAnswerData = window.wrongAnswersData[currentQuestionIndex]
+    if (wrongAnswerData) {
+      userAnswer = wrongAnswerData.userAnswer
+    }
+  }
+
+  const hasAnswered = userAnswer !== undefined
+
+  document.getElementById("questionText").textContent = `${currentQuestionIndex + 1}. ${question.question}`
+
+  const answersContainer = document.getElementById("answersContainer")
+  answersContainer.innerHTML = ""
+
+  const isMultipleChoice = question.correct.length > 1
+
+  question.answers.forEach((answer, index) => {
+    const button = document.createElement("button")
+    button.className = "answer-option"
+    button.textContent = answer
+
+    if (hasAnswered) {
+      button.classList.add("disabled")
+
+      if (Array.isArray(userAnswer)) {
+        if (userAnswer.includes(index) && !question.correct.includes(index)) {
+          button.classList.add("incorrect")
+        }
+      } else {
+        if (userAnswer === index && !question.correct.includes(index)) {
+          button.classList.add("incorrect")
+        }
+      }
+
+      if (question.correct.includes(index)) {
+        button.classList.add("correct")
+      }
+    } else {
+      if (isMultipleChoice) {
+        // Only allow selection if not yet submitted
+        button.addEventListener("click", (event) => toggleMultipleAnswer(index, actualIndex, event))
+        if (userAnswer && Array.isArray(userAnswer) && userAnswer.includes(index)) {
+          button.classList.add("selected")
+        }
+      } else {
+        // Single choice questions
+        button.addEventListener("click", (event) => selectAnswer(index, actualIndex, event))
+      }
+    }
+
+    answersContainer.appendChild(button)
+  })
+
+  // Add submit button for multiple choice if not answered
+  if (isMultipleChoice && !hasAnswered) {
+    const submitBtn = document.createElement("button")
+    submitBtn.id = "submitBtn"
+    submitBtn.className = "nav-btn"
+    submitBtn.textContent = "Odeslat odpověď"
+    submitBtn.style.marginTop = "15px"
+    submitBtn.addEventListener("click", () => submitMultipleAnswer(actualIndex))
+    answersContainer.appendChild(submitBtn)
+  }
+
+  // Show feedback if already answered
+  const feedbackEl = document.getElementById("feedback")
+  if (hasAnswered) {
+    const isCorrect = checkAnswer(userAnswer, question.correct)
+    feedbackEl.className = `feedback ${isCorrect ? "correct" : "incorrect"}`
+    
+    if (showingWrongOnly) {
+      // Show detailed feedback for wrong answers
+      let feedbackText = "✗ Špatně! Správná odpověď je zvýrazněna zeleně."
+      
+      // Add user's answer information
+      if (Array.isArray(userAnswer)) {
+        const userAnswerText = userAnswer.map(idx => question.answers[idx]).join(", ")
+        const correctAnswerText = question.correct.map(idx => question.answers[idx]).join(", ")
+        feedbackText += ` Vaše odpověď: ${userAnswerText}. Správná odpověď: ${correctAnswerText}.`
+      } else {
+        const userAnswerText = question.answers[userAnswer]
+        const correctAnswerText = question.correct.map(idx => question.answers[idx]).join(", ")
+        feedbackText += ` Vaše odpověď: ${userAnswerText}. Správná odpověď: ${correctAnswerText}.`
+      }
+      
+      feedbackEl.textContent = feedbackText
+    } else {
+      feedbackEl.textContent = isCorrect ? "✓ Správně!" : "✗ Špatně! Správná odpověď je zvýrazněna zeleně."
+      
+      // Track wrong answers (only when not in wrong answers mode)
+      if (!isCorrect) {
+        wrongAnswers.set(actualIndex, userAnswer)
+        saveWrongAnswersState()
+      } else if (wrongAnswers.has(actualIndex)) {
+        // Remove from wrong answers if user corrected their mistake
+        wrongAnswers.delete(actualIndex)
+        saveWrongAnswersState()
+      }
+    }
+  } else {
+    feedbackEl.className = "feedback hidden"
+  }
+
+  updateNavigationButtons()
+  updateStats()
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ČJ Literární Test - Maturita</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-gradient"></div>
+    <div class="stars-container" id="stars"></div>
+    <div class="ember-container" id="embers"></div>
+
+    <div class="container">
+        <header>
+            <h1>Český jazyk - Literární díla k maturitě</h1>
+            <div class="stats">
+                <span id="questionCounter">Otázka 1 z 0</span>
+                <span id="score">Zodpovězeno: 0/0</span>
+            </div>
+        </header>
+
+        <!-- Výběr díla -->
+        <div class="work-selection" id="workSelection">
+            <h3>Vyberte literární dílo:</h3>
+            <div class="work-buttons">
+                <button id="gatsbyBtn" class="work-btn">Velký Gatsby</button>
+                <button id="romeoBtn" class="work-btn">Romeo a Julie</button>
+                <button id="hamletBtn" class="work-btn">Hamlet</button>
+                <button id="bilaNemocBtn" class="work-btn">Bílá nemoc</button>
+                <button id="kyticeBtn" class="work-btn">Kytice</button>
+                <button id="allWorksBtn" class="work-btn active">Všechna díla</button>
+            </div>
+        </div>
+
+        <!-- Výběr kategorií otázek -->
+        <div class="category-selection" id="categorySelection">
+            <h3>Vyberte kategorie otázek:</h3>
+            <div class="category-checkboxes">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="genreCheckbox" checked>
+                    <span class="checkmark"></span>
+                    Literární žánr
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="authorCheckbox" checked>
+                    <span class="checkmark"></span>
+                    Autor
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="authorDetailsCheckbox" checked>
+                    <span class="checkmark"></span>
+                    Více otázek na autora
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="authorPeriodCheckbox" checked>
+                    <span class="checkmark"></span>
+                    Více otázek na dobu autora
+                </label>
+            </div>
+            <button id="startTestBtn" class="start-test-btn">Spustit test</button>
+        </div>
+
+        <!-- Import/Export sekce -->
+        <div class="import-export-section" id="importExportSection">
+            <h3>Správa dat</h3>
+            <div class="import-export-buttons">
+                <button id="exportTemplateBtn" class="import-export-btn">Exportovat šablonu</button>
+                <button id="exportDataBtn" class="import-export-btn">Exportovat všechna data</button>
+                <div class="import-section">
+                    <input type="file" id="importFileInput" accept=".json" style="display: none;">
+                    <button id="importDataBtn" class="import-export-btn">Importovat data</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls" id="controlsSection">
+            <button id="allQuestionsBtn" class="control-btn active">Všechny otázky</button>
+            <button id="wrongQuestionsBtn" class="control-btn">Špatné odpovědi</button>
+            <button id="resetBtn" class="control-btn reset-btn">Resetovat</button>
+            <button id="backToSelectionBtn" class="control-btn">Zpět na výběr</button>
+        </div>
+
+        <div id="quizContainer" class="quiz-container">
+            <div class="question-card">
+                <h2 id="questionText"></h2>
+                <div id="answersContainer" class="answers-container"></div>
+            </div>
+
+            <div id="feedback" class="feedback hidden"></div>
+
+            <div class="navigation">
+                <button id="prevBtn" class="nav-btn" disabled>← Předchozí</button>
+                <button id="starBtn" class="nav-btn star-btn">★</button>
+                <button id="nextBtn" class="nav-btn">Další →</button>
+            </div>
+        </div>
+
+        <div id="completionScreen" class="completion-screen hidden">
+            <h2>✓ Hodnocení dokončeno!</h2>
+            <p id="finalScore"></p>
+            <button id="restartBtn" class="restart-btn">Začít znovu</button>
+        </div>
+    </div>
+
+    <script src="literature-data.js"></script>
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script src="verify-implementation.js"></script>
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Create embers
+        const embersContainer = document.getElementById('embers');
+        for (let i = 0; i < 12; i++) {
+            const ember = document.createElement('div');
+            ember.className = 'ember-particle';
+            ember.style.left = Math.random() * 100 + '%';
+            ember.style.setProperty('--duration', (8 + Math.random() * 6) + 's');
+            ember.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
+            ember.style.animationDelay = Math.random() * 5 + 's';
+            embersContainer.appendChild(ember);
+        }
+    </script>
+</body>
+</html>
