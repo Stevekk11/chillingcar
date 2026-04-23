@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChillingCar - Exam Countdown</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body style="margin: 0; padding: 0;">
@@ -25,8 +27,10 @@
             <h1 class="main-title">EXAM COUNTDOWN</h1>
             <h2 id="current-exam-title">Select an Exam</h2>
             <div class="fleshcards-link-container" style="gap: 1rem;">
-                <a href="FlashCards/index.html" class="fleshcards-btn">Učit se Literatura</a>
-                <a href="FleshCards/literarni-test/index.html" class="fleshcards-btn" style="background: transparent; color: var(--accent-orange); border: 2px solid var(--accent-orange);">Literární Test</a>
+                <a href="FlashCards/index.html" class="fleshcards-btn btn btn-primary m-2">Učit se literaturu</a>
+                <a href="FleshCards/literarni-test/index.html" class="fleshcards-btn btn btn-primary m-2"
+                   style="background: transparent; color: var(--accent-orange); border: 2px solid var(--accent-orange);">Literární
+                    Test</a>
             </div>
         </header>
 
@@ -56,7 +60,13 @@
                     <!-- dynamically populated by JS -->
                 </ul>
             </div>
-            
+
+            <div class="exams-list past-exams-list">
+                <h3>Past Exams</h3>
+                <ul id="past-exam-list">
+                </ul>
+            </div>
+
         </main>
     </div>
 

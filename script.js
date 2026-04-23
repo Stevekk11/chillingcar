@@ -1,7 +1,7 @@
 const exams = [
     { name: "Sloh", date: "2026-04-15T07:30:00" },
     { name: "Didaktické testy", date: "2026-05-04T07:30:00" },
-    { name: "Ustní zkoušky", date: "2026-05-22T07:30:00" }
+    {name: "Ústní zkoušky", date: "2026-05-22T07:30:00"}
 ];
 
 let targetDate = new Date(exams[0].date).getTime();
@@ -13,25 +13,39 @@ const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 const examTitleEl = document.getElementById("current-exam-title");
 const examListEl = document.getElementById("exam-list");
+const pastExamListEl = document.getElementById("past-exam-list");
 
 function init() {
     renderExamsList();
-    setExam(exams[0].name, exams[0].date);
+    const firstUpcomingLi = examListEl.querySelector("li");
+    if (firstUpcomingLi) {
+        const examName = firstUpcomingLi.querySelector(".exam-name").textContent;
+        const exam = exams.find(e => e.name === examName);
+        if (exam) setExam(exam.name, exam.date);
+    } else {
+        setExam(exams[0].name, exams[0].date);
+    }
     startCountdown();
 }
 
 function renderExamsList() {
     examListEl.innerHTML = "";
-    exams.forEach((exam, index) => {
+    pastExamListEl.innerHTML = "";
+    exams.forEach((exam) => {
         const li = document.createElement("li");
 
         const dateObj = new Date(exam.date);
         const dateStr = dateObj.toLocaleDateString("cs-CZ");
+        const isPastDue = dateObj < new Date();
 
         li.innerHTML = `
-            <span class="exam-name">${exam.name}</span>
-            <span class="exam-date">${dateStr}</span>
-        `;
+               <span class="exam-name">${exam.name}</span>
+               <span class="exam-date">${dateStr}</span>
+           `;
+        // Add 'past-due'
+        if (isPastDue) {
+            li.classList.add("past-due");
+        }
 
         // Hover changes the countdown
         li.addEventListener("mouseenter", () => {
@@ -41,10 +55,16 @@ function renderExamsList() {
             li.classList.add("active");
         });
 
-        if (index === 0) li.classList.add("active");
-
-        examListEl.appendChild(li);
+        if (isPastDue) {
+            pastExamListEl.appendChild(li);
+        } else {
+            examListEl.appendChild(li);
+        }
     });
+    const firstUpcoming = examListEl.querySelector("li");
+    if (firstUpcoming) {
+        firstUpcoming.classList.add("active");
+    }
 }
 
 function setExam(name, dateStr) {
@@ -67,6 +87,7 @@ function updateCountdown() {
         hoursEl.classList.add("finished");
         minutesEl.classList.add("finished");
         secondsEl.classList.add("finished");
+
         return;
     } else {
         daysEl.classList.remove("finished");

@@ -24,6 +24,28 @@ body {
   overflow-x: hidden;
 }
 
+.past-due {
+  background: repeating-linear-gradient(
+          45deg,
+          rgb(195, 19, 19, 0.5),
+          rgba(255, 107, 53, 0.1) 10px,
+          rgba(255, 255, 255, 0.05) 10px,
+          rgba(255, 255, 255, 0.05) 20px
+  );
+  border-color: rgba(194, 19, 19, 0.5);
+  border-width: 5px;
+}
+
+.past-due:hover {
+  background: repeating-linear-gradient(
+          45deg,
+          rgba(255, 107, 53, 0.2),
+          rgba(255, 107, 53, 0.2) 10px,
+          rgba(255, 255, 255, 0.1) 10px,
+          rgba(255, 255, 255, 0.1) 20px
+  );
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
